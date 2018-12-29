@@ -3,14 +3,14 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import Home from './views/home'
 
-export default function BaseRouter(props) {
+export default function BaseRouter() {
   return(
     <BrowserRouter>
       <Switch>
         <Route
           exact
           path='/'
-          render={routerProps => <Home/>}
+          component={Home}
         />
         {/* <Route
           exact
