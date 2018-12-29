@@ -1,0 +1,32 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "modules": false,
+                "targets": {
+                    "browsers": [
+                        "last 2 versions"
+                    ]
+                },
+                "useBuiltIns": "entry"
+            }
+        ]
+    ],
+    "plugins": [
+        "@babel/transform-react-jsx",
+        [
+            "@babel/plugin-transform-runtime",
+            {
+                "regenerator": true
+            }
+        ],
+        "@babel/plugin-syntax-dynamic-import",
+        [
+            "@babel/plugin-proposal-decorators",
+            {
+                "legacy": true
+            }
+        ]
+    ]
+}

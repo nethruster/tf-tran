@@ -1,0 +1,10 @@
+Lineas:
+0 - normal
+1 - la otra
+
+Rutas:
+0 - trinidad
+1 - intercambiador
+
+0 - La cuesta
+1 - Tincer
