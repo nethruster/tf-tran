@@ -1,0 +1,64 @@
+// Reset 
+:global {
+    * { box-sizing: border-box; }
+
+    html {
+        font-family: sans-serif;
+        text-size-adjust: 100%;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    body {
+        word-wrap: break-word;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    body, html { height: 100%; }
+
+    html, body, div, span,
+    h1, h2, h3, h4, h5, h6, p, pre,
+    a,
+    img,
+    small, strong, sub, sup,
+    b, u, i, center,
+    ul, li,
+    form, label,
+    article, aside, canvas, embed,
+    footer, header,
+    menu, nav, section,
+    time, audio, video,
+    button, a, input, textarea {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        vertical-align: baseline;
+    }
+
+    img { border: 0 }
+
+    ol, ul { 
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    img, svg, video {
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    button, a, input, textarea { outline: none; }
+
+    button, select, textarea,
+    input[type="button"], input[type="email"], input[type="number"],
+    input[type="password"], input[type="search"], input[type="submit"],
+    input[type="tel"], input[type="text"], input[type="url"] {
+    appearance: none;
+    }
+
+    textarea {
+    resize: vertical;
+    overflow: auto;
+    vertical-align: top; // remove extra space below textarea element
+    }
+}
