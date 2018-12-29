@@ -5,16 +5,19 @@
             {
                 "modules": false,
                 "targets": {
-                    "browsers": [
-                        "last 2 versions"
-                    ]
+                    "browsers": ["last 2 versions"]
                 },
                 "useBuiltIns": "entry"
             }
         ]
     ],
     "plugins": [
-        "@babel/transform-react-jsx",
+        [
+            "@babel/transform-react-jsx",
+            {
+                "pragma": "h"
+            }
+        ],
         [
             "@babel/plugin-transform-runtime",
             {

@@ -31,10 +31,9 @@
     "webpack-dev-server": "^3.1.12"
   },
   "dependencies": {
-    "@material-ui/core": "^3.7.1",
     "decko": "^1.2.0",
-    "preact": "^16.7.0",
-    "preact-compat": "^16.7.0",
+    "preact": "^8.4.2",
+    "preact-compat": "^3.18.4",
     "react-ink": "^6.4.0",
     "react-router-dom": "^4.3.1",
     "unistore": "^3.1.0"

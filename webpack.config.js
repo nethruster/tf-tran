@@ -19,7 +19,7 @@ module.exports = {
     splitChunks: {
       cacheGroups: {
         vendor: {
-          test: /react|react-router-dom|decko|react-ink/,
+          test: /preact|preact-compat|react-router-dom|decko|react-ink/,
           chunks: 'initial',
           name: 'vendor',
         }
@@ -90,6 +90,10 @@ module.exports = {
     }
   },
   resolve: {
+    alias: {
+      react: 'preact-compat',
+      'react-dom': 'preact-compat'
+    },
     modules: [APP_DIR + '/shared-components', APP_DIR + '/store', 'node_modules']
   },
   plugins: [

@@ -1,6 +1,6 @@
-import {h} from 'preact'
-import { bind } from 'decko';
-import { render } from 'react-dom'
+import { h, render, Component } from 'preact'
+import { bind } from 'decko'
+import 'preact/debug' // TODO Remove on prod
 
 import BaseRouter from './base-router'
 // import tranvia from "./scripts/tranvia-api"
