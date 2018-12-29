@@ -1,0 +1,24 @@
+:local {
+    .searchInput {
+        -webkit-appearance: none;
+        padding: 10px;
+        background-color: transparent;
+        font-family: inherit;
+        width: 100%;
+        
+        &::placeholder {            
+            color: var(--color-secondary);
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+    }
+
+    .searchInputWrapper {
+        padding-left: 16px;
+        border-radius: 32px;
+        background-color: var(--color-tertiary);
+        width: 90%;
+        margin: 8px 0;
+        box-shadow: var(--black-box-shadow);
+    }
+}
