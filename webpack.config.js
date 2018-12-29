@@ -94,7 +94,7 @@ module.exports = {
       react: 'preact-compat',
       'react-dom': 'preact-compat'
     },
-    modules: [APP_DIR + '/shared-components', APP_DIR + '/store', 'node_modules']
+    modules: [APP_DIR + '/components', APP_DIR + '/store', APP_DIR + '/scripts', 'node_modules']
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
