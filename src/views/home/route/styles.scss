@@ -1,0 +1,22 @@
+:local {
+    .lineListingContainer {
+        position: relative;
+        border-radius: var(--base-br);
+        background-color: var(--color-tertiary);
+        
+        &:not(:last-child) { margin-bottom: 52px; }
+
+        &::before {
+            content: "Línea " attr(data-line);        
+            position: absolute;
+            top: -28px;
+            min-height: 42px;
+            border-radius: 50px;
+            padding: 5px 42px;
+            background-color: var(--color-tertiary);
+            z-index: -2;
+        }
+
+        ul { width: 100%; }        
+    }
+}

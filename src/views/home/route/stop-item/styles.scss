@@ -1,0 +1,34 @@
+:local {
+    .listingItem { 
+        padding: 14px 20px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--color-secondary);
+
+            .listingItemIcon {
+                background-color: var(--color-tertiary);
+            }
+        }
+    }
+
+    .listingItemLink {
+        display: block;
+        overflow: hidden;
+
+        &:first-child { border-radius: var(--base-br) var(--base-br) 0 0; }
+
+        &:last-child { border-radius: 0 0 var(--base-br) var(--base-br); }
+    }
+
+    .listingItemIcon {
+        background-color: var(--color-primary);
+        border-radius: 100%;
+        padding: 4px;
+    }
+
+    .stopTitle {
+        font-size: 1.1em;
+        font-weight: 300;
+    }
+}
