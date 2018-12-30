@@ -15,7 +15,7 @@
 
     .searchInputWrapper {
         padding-left: 16px;
-        border-radius: 32px;
+        border-radius: var(--base-br);
         background-color: var(--color-tertiary);
         width: 90%;
         margin: 8px 0;

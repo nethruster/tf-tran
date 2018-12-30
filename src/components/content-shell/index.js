@@ -7,7 +7,7 @@ import ContentRouter from 'content-router';
 
 export default function ContentShell() {
   return (
-    <div class={`flex ${style.wrapper}`}>
+    <div class={`flex flex-dc ${style.wrapper}`}>
       <div class={style.backgroundHeader} />
       <Header />
       <ContentRouter />      
