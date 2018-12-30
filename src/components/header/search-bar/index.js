@@ -1,8 +1,8 @@
-import { h, Component } from 'preact'
+import { h, Component } from "preact";
 
-import Icon from 'icon'
+import Icon from "icon";
 
-import style from './styles.scss'
+import style from "./styles.scss";
 
 export default class SearchBar extends Component {
   render() {
@@ -10,9 +10,13 @@ export default class SearchBar extends Component {
       <div class="flex flex-main-center">
         <div class={`flex flex-cross-center ${style.searchInputWrapper}`}>
           <Icon name="search" color="var(--color-secondary)" size="22" />
-          <input type="search" class={style.searchInput} placeholder="Busca tu estación..." />
+          <input
+            type="search"
+            class={style.searchInput}
+            placeholder="Busca tu estación..."
+          />
         </div>
       </div>
-    )
+    );
   }
 }

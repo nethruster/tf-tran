@@ -1,8 +1,13 @@
-import { h } from 'preact'
+import { h } from "preact";
 
-import icons from 'icons'
+import icons from "icons";
 
-export default function Icon({ name, size = '20', marginRight, color = 'var(--color-secondary)' }) {
+export default function Icon({
+  name,
+  size = "20",
+  marginRight,
+  color = "var(--color-secondary)"
+}) {
   return (
     <svg
       width={size}
@@ -12,5 +17,5 @@ export default function Icon({ name, size = '20', marginRight, color = 'var(--co
     >
       <path d={icons[name]} fill={color} />
     </svg>
-  )
+  );
 }
