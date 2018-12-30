@@ -1,6 +1,7 @@
 :local {
     .homeWrapper {
         margin-top: 80px;
+        margin-bottom: 24px;
         padding: 0 24px;
     }
 
@@ -10,7 +11,7 @@
         background-color: var(--color-tertiary);
 
         &::before {
-            content: "Línea " attr(data-line);            
+            content: "Línea " attr(data-line);        
             position: absolute;
             top: -28px;
             min-height: 42px;
@@ -27,10 +28,6 @@
         padding: 14px 20px;
         cursor: pointer;
 
-        &:first-child { border-radius: var(--base-br) var(--base-br) 0 0; }
-
-        &:last-child { border-radius: 0 0 var(--base-br) var(--base-br); }
-
         &:hover {
             background-color: var(--color-secondary);
 
@@ -38,6 +35,16 @@
                 background-color: var(--color-tertiary);
             }
         }
+    }
+
+    .listingItemLink {
+        display: block;
+        overflow: hidden;
+
+        &:first-child { border-radius: var(--base-br) var(--base-br) 0 0; }
+
+        &:last-child { border-radius: 0 0 var(--base-br) var(--base-br); }
+
     }
 
     .listingItemIcon {
