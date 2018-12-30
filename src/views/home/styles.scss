@@ -2,13 +2,15 @@
     .homeWrapper {
         margin-top: 80px;
         margin-bottom: 24px;
-        padding: 0 24px;
+        padding: 0 16px;
     }
 
     .lineListingContainer {
         position: relative;
         border-radius: var(--base-br);
         background-color: var(--color-tertiary);
+        
+        &:not(:last-child) { margin-bottom: 52px; }
 
         &::before {
             content: "Línea " attr(data-line);        
@@ -44,7 +46,6 @@
         &:first-child { border-radius: var(--base-br) var(--base-br) 0 0; }
 
         &:last-child { border-radius: 0 0 var(--base-br) var(--base-br); }
-
     }
 
     .listingItemIcon {

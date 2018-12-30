@@ -1,0 +1,17 @@
+:local {
+    .stopTime {
+        &:first-child {
+            background-color: var(--color-primary);
+
+            [chip] { display: flex; }
+        }
+
+        [chip] { display: none; }
+
+        border-radius: var(--base-br);
+        padding: 12px 16px;
+        margin: 12px 0;
+        width: 100%;
+        max-width: 300px;
+    }
+}

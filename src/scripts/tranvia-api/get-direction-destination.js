@@ -1,16 +1,13 @@
-var x = [
-  ["La Trinidad", "Intercambiador"],
-  ["La Cuesta", "Tíncer"]
-]
+var x = [["La Trinidad", "Intercambiador"], ["La Cuesta", "Tíncer"]];
 
 export default function(route, direction) {
-  let routeArr = x[route]
+  let routeArr = x[route];
   if (routeArr === undefined) {
-    return "Error, No hay suficiente información sobre la linea"
+    return "Error, No hay suficiente información sobre la linea";
   }
-  let result = routeArr[direction]
+  let result = routeArr[direction];
   if (result === undefined) {
-    return "Error, Dirección no valida"
+    return "Error, Dirección no valida";
   }
-  return result
+  return result;
 }

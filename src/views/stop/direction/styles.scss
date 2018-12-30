@@ -1,0 +1,19 @@
+:local {
+    .directionWrapper {
+        width: 100%;
+        padding: 14px 24px;
+    }
+
+    .directionTitle {
+        font-weight: 400;
+        margin: 0;
+    }
+
+    .directionInfo { margin-left: 38px; }
+
+    .directionDescription {
+        font-weight: 300;
+        color: var(--color-secondary);
+        font-size: .95em;
+    }
+}
