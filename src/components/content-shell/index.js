@@ -1,7 +1,6 @@
 import { h, Component } from "preact";
 import { connect } from "unistore/preact";
 
-import Header from "header";
 import ContentRouter from "content-router";
 
 import { actions } from "store";
@@ -51,7 +50,6 @@ export default connect(
       return (
         <div class={`flex flex-dc ${style.wrapper}`}>
           <div class={style.backgroundHeader} />
-          <Header />
           <ContentRouter />
         </div>
       );

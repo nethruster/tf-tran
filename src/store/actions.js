@@ -18,5 +18,11 @@ export default store => ({
     let newErrs = [...state.error];
     newErrs.shift();
     store.setState({ errors: newErrs });
+  },
+  setCurrentStop(state, stop) {
+    store.setState({ selectedStop: stop });
+  },
+  resetCurrentStop(state) {
+    store.setState({ selectedStop: "" });
   }
 });

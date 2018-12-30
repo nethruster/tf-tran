@@ -21,6 +21,14 @@ export default connect(
       this.stopData = [];
     }
 
+    componentWillMount() {
+      this.props.setCurrentStop(this.stop);
+    }
+
+    componentWillUnmount() {
+      this.props.resetCurrentStop();
+    }
+
     @bind
     renderRouteInfo() {
       this.stopData = this.props.routes[Number(this.routeName) - 1].stops[

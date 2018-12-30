@@ -1,7 +1,8 @@
 const initialStore = {
   routes: null,
   lastUpdate: 0,
-  errors: []
+  errors: [],
+  selectedStop: ""
 };
 
 export default initialStore;
