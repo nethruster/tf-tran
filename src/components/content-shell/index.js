@@ -2,6 +2,7 @@ import { h, Component } from "preact";
 import { connect } from "unistore/preact";
 
 import ContentRouter from "content-router";
+import Footer from "footer";
 
 import { actions } from "store";
 
@@ -21,7 +22,9 @@ export default connect(
     }
 
     componentWillMount() {
-      this.fetchData();
+      if (this.props.routes == null) {
+        this.fetchData();
+      }
 
       setInterval(() => {
         this.fetchData();
@@ -49,8 +52,11 @@ export default connect(
     render() {
       return (
         <div class={`flex flex-dc ${style.wrapper}`}>
-          <div class={style.backgroundHeader} />
-          <ContentRouter />
+          <div class={style.contentWrapper}>
+            <div class={style.backgroundHeader} />
+            <ContentRouter />
+          </div>
+          <Footer isFetchingData={this.state.isFetching} />
         </div>
       );
     }
