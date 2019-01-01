@@ -4,13 +4,7 @@
         cursor: pointer;
         position: relative;
 
-        &:hover {
-            background-color: var(--color-secondary);
-
-            .listingItemIcon {
-                background-color: var(--color-tertiary);
-            }
-        }
+        &:hover { background-color: var(--color-secondary-lighter); }
     }
 
     .listingItemLink {
