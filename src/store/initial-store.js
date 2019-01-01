@@ -2,7 +2,8 @@ const initialStore = {
   routes: null,
   lastUpdate: 0,
   errors: [],
-  selectedStop: ""
+  selectedStop: "",
+  searchKey: ""
 };
 
 export default initialStore;

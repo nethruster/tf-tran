@@ -24,5 +24,9 @@ export default store => ({
   },
   resetCurrentStop(state) {
     store.setState({ selectedStop: "" });
+  },
+  setSearchKey(state, value) {
+    value = value.trim().toLowerCase();
+    store.setState({ searchKey: value });
   }
 });

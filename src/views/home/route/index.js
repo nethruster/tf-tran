@@ -1,26 +1,55 @@
-import { h } from "preact";
+import { h, Component } from "preact";
+import { bind } from "decko";
+import { connect } from "unistore/preact";
 
 import Stop from "./stop-item";
+import { actions } from "store";
 
 import style from "./styles.scss";
 
-function renderRouteStops(route, stops) {
-  if (!stops) {
-    return <p>No se han podido cargar las paradas</p>;
+export default connect(
+  "searchKey",
+  actions
+)(
+  class Route extends Component {
+    constructor(props) {
+      super(props);
+    }
+
+    @bind
+    renderRouteStops() {
+      let searchKey = this.props.searchKey;
+      let route = this.props.route;
+      let stops = route.stops;
+
+      if (!stops) {
+        return <p class="text-center">No se han podido cargar las paradas</p>;
+      }
+
+      if (searchKey) {
+        return Object.keys(stops).map(stop => {
+          return (
+            stop.toLowerCase().includes(searchKey) && (
+              <Stop link={`/${route.name}/${stop}`} stop={stop} />
+            )
+          );
+        });
+      }
+
+      return Object.keys(stops).map(stop => {
+        return <Stop link={`/${route.name}/${stop}`} stop={stop} />;
+      });
+    }
+
+    render({ route }) {
+      return (
+        <ul
+          class={`flex flex-main-center flex-dc ${style.lineListingContainer}`}
+          data-line={route.name}
+        >
+          {this.renderRouteStops()}
+        </ul>
+      );
+    }
   }
-
-  return Object.keys(stops).map(stop => {
-    return <Stop link={`/${route}/${stop}`} stop={stop} />;
-  });
-}
-
-export default function Route({ route }) {
-  return (
-    <div
-      class={`flex flex-main-center ${style.lineListingContainer}`}
-      data-line={route.name}
-    >
-      <ul>{renderRouteStops(route.name, route.stops)}</ul>
-    </div>
-  );
-}
+);

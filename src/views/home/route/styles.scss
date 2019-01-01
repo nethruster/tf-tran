@@ -3,6 +3,7 @@
         position: relative;
         border-radius: var(--base-br);
         background-color: var(--color-tertiary);
+        width: 100%;
         
         &:not(:last-child) { margin-bottom: 52px; }
 
@@ -15,8 +16,9 @@
             padding: 5px 42px;
             background-color: var(--color-tertiary);
             z-index: -2;
+            align-self: center;
         }
 
-        ul { width: 100%; }        
+        &:empty { display: none; }
     }
 }
