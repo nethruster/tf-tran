@@ -1,0 +1,15 @@
+:local {
+    .searchInput {
+        -webkit-appearance: none;
+        padding: 10px;
+        background-color: transparent;
+        font-family: inherit;
+        width: 100%;
+        
+        &::placeholder {            
+            color: var(--color-secondary);
+            font-weight: 300;
+            font-size: 1.1em;
+        }
+    }
+}

@@ -2,7 +2,9 @@ export default function(data) {
   if (!data) {
     throw new Error("Empty data provided");
   }
+
   var routes = [];
+
   data.forEach(item => {
     if (routes[item.route - 1] === undefined) {
       routes[item.route - 1] = { name: `${item.route}`, stops: {} };
@@ -21,6 +23,7 @@ export default function(data) {
   for (var i = routes.length - 1; i >= 0; i--) {
     sortRoute(routes[i]);
   }
+
   return routes;
 }
 

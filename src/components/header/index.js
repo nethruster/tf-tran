@@ -16,7 +16,6 @@ export default connect(["selectedStop", "routes"])(function Header({
     <div class={`flex flex-dc ${style.headerWrapper}`}>
       {routes && selectedStop && <BackButton />}
       <Logo />
-
       {routes ? (
         selectedStop ? (
           <StopTitle title={selectedStop} />

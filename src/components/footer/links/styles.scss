@@ -1,0 +1,11 @@
+:local {
+    .authorInfo {
+        a {
+            text-decoration: underline;
+            color: var(--color-bg);
+            opacity: .6;
+
+            &:hover { opacity: 1; }
+        }
+    }
+}

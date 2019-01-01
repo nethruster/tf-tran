@@ -5,6 +5,7 @@ import ContentRouter from "content-router";
 import Footer from "footer";
 
 import { actions } from "store";
+import { REFRESH_RATE } from "vars";
 
 import style from "./styles.scss";
 
@@ -28,7 +29,7 @@ export default connect(
 
       setInterval(() => {
         this.fetchData();
-      }, 10000);
+      }, REFRESH_RATE);
     }
 
     fetchData() {

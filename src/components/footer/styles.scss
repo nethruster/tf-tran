@@ -2,21 +2,10 @@
     .footerWrapper {
         margin: 8px;
         color: var(--color-secondary);
+
         small {
             flex: 1;
             text-align: center;
-        }
-    }
-
-    .authorInfo {
-        a {
-            text-decoration: underline;
-            color: var(--color-bg);
-            opacity: .6;
-
-            &:hover {
-                opacity: 1;
-            }
         }
     }
 }

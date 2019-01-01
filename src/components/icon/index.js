@@ -5,7 +5,6 @@ import icons from "icons";
 export default function Icon({
   name,
   size = "20",
-  marginRight,
   color = "var(--color-secondary)"
 }) {
   return (

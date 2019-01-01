@@ -1,4 +1,4 @@
-export default function getRemainingMinutesString(remainingMinutes) {
+export default function (remainingMinutes) {
   switch (remainingMinutes) {
     case 0:
       return "Menos de un minuto";

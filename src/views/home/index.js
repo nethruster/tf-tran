@@ -20,7 +20,7 @@ export default connect(
     @bind
     renderRoutes() {
       if (!this.props.routes) {
-        return <p>No se han podido cargar las paradas</p>;
+        return <p class="text-center">No se han podido cargar las paradas</p>;
       }
 
       return this.props.routes.map(route => {

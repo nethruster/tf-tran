@@ -1,8 +1,10 @@
-export default function(uri = "/api/tranvia") {
-  return fetch(uri).then(resp => {
-    if (!resp.ok) {
-      throw "Bad response";
+import {DEFAULT_API_URI} from 'vars'
+
+export default function(uri = DEFAULT_API_URI) {
+  return fetch(uri).then(response => {
+    if (!response.ok) {
+      throw "Response was not OK";
     }
-    return resp.json();
+    return response.json();
   });
 }
