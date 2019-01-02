@@ -23,12 +23,13 @@ export default connect(
     this.props.setSearchKey(event.target.value);
   }
 
-  render() {
+  render({id}) {
     return (
       <input
         ref={el => {
           this.searchInput = el;
         }}
+        id={id}
         type="search"
         class={style.searchInput}
         placeholder="Busca tu estación..."

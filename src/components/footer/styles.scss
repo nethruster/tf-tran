@@ -1,9 +1,10 @@
 :local {
     .footerWrapper {
         margin: 8px;
-        color: var(--color-secondary);
+        opacity: .7;
 
-        small {
+        small,
+        span {
             flex: 1;
             text-align: center;
         }

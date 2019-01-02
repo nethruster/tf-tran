@@ -1,6 +1,7 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Próximo Tranvía",
+    "short_name": "Próximo Tran.",
+    "start_url": "/",
     "icons": [
         {
             "src": "/assets/favicons/android-chrome-192x192.png",

@@ -6,7 +6,7 @@ export default function FooterLinks() {
   return (
     <small class={style.authorInfo}>
       Un proyecto de&nbsp;
-      <a target="_blank" href="https://nethruster.com">
+      <a target="_blank" rel="noopener" href="https://nethruster.com">
         Nethruster
       </a>
     </small>
