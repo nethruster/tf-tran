@@ -8,11 +8,11 @@ import style from "./styles.scss";
 export default function Footer({ isFetchingData }) {
   return (
     <p class={`flex flex-dc ${style.footerWrapper}`}>
-      <span class="flex">
+      <span class="flex flex-main-center">
         <RefreshCounter isFetchingData={isFetchingData} />
         <FooterLinks />
       </span>
-      <small class="text-center">Este sitio no está de ningún modo afiliado, autorizado, mantenido o promocionado por Titsa. <br />Esto es un proyecto no oficial e independiente.</small>
+      <small class="text-center"><small>Este sitio no está de ningún modo afiliado, autorizado, mantenido o promocionado por Titsa.</small></small>
     </p>
   );
 }

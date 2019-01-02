@@ -3,7 +3,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        background-image: var(--home-gradient);
+        background-image: var(--home-image), var(--home-gradient);
         height: var(--header-height);
         width: 100%;
         z-index: -2;

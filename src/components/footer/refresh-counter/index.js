@@ -3,6 +3,8 @@ import { bind } from "decko";
 
 import { REFRESH_RATE } from "vars";
 
+import style from './styles.scss'
+
 export default class RefreshCounter extends Component {
   constructor(props) {
     super(props);
@@ -29,7 +31,7 @@ export default class RefreshCounter extends Component {
 
   render({ isFetchingData }) {
     return (
-      <small>
+      <small class={style.refreshCounter}>
         {this.state.refreshCount <= 0 || isFetchingData
           ? "Refrescando..."
           : `Refrescando en ${this.state.refreshCount}`}

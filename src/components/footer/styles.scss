@@ -1,12 +1,12 @@
 :local {
     .footerWrapper {
-        margin: 8px;
+        margin: 8px 0;
         opacity: .7;
 
         small,
         span {
-            flex: 1;
             text-align: center;
+            margin: 0 16px;
         }
     }
 }
