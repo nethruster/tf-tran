@@ -3,6 +3,7 @@ import { bind } from "decko";
 import { connect } from "unistore/preact";
 
 import Direction from "./direction";
+import Loader from "loader";
 
 import { actions } from "store";
 
@@ -52,7 +53,7 @@ export default connect(
       return (
         <div class={style.stopWrapper}>
           {routes === null ? (
-            <p class="text-center">Cargando datos...</p>
+            <Loader />
           ) : (
             <div
               class={`flex flex-cross-center flex-dc ${

@@ -3,6 +3,7 @@ import { connect } from "unistore/preact";
 import { bind } from "decko";
 
 import Route from "./route";
+import Loader from "loader";
 
 import { actions } from "store";
 
@@ -31,11 +32,7 @@ export default connect(
     render({ routes }) {
       return (
         <div class={style.homeWrapper}>
-          {routes === null ? (
-            <p class="text-center">Cargando datos...</p>
-          ) : (
-            this.renderRoutes()
-          )}
+          {routes === null ? <Loader /> : this.renderRoutes()}
         </div>
       );
     }

@@ -5,6 +5,7 @@ import Logo from "./logo";
 import SearchBar from "./search-bar";
 import BackButton from "./back-button";
 import StopTitle from "./stop-title";
+import Loader from "loader";
 
 import style from "./styles.scss";
 
@@ -16,14 +17,12 @@ export default connect(["selectedStop", "routes"])(function Header({
     <div class={`flex flex-dc ${style.headerWrapper}`}>
       {routes && selectedStop && <BackButton />}
       <Logo />
-      {routes ? (
-        selectedStop ? (
-          <StopTitle title={selectedStop} />
-        ) : (
-          <SearchBar />
-        )
+      {routes == null ? (
+        <Loader color="var(--color-primary)" />
+      ) : selectedStop ? (
+        <StopTitle title={selectedStop} />
       ) : (
-        <p class="text-center">Cargando datos...</p>
+        <SearchBar />
       )}
     </div>
   );

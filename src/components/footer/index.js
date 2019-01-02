@@ -12,7 +12,12 @@ export default function Footer({ isFetchingData }) {
         <RefreshCounter isFetchingData={isFetchingData} />
         <FooterLinks />
       </span>
-      <small class="text-center"><small>Este sitio no está de ningún modo afiliado, autorizado, mantenido o promocionado por Titsa.</small></small>
+      <small class="text-center">
+        <small>
+          Este sitio no está de ningún modo afiliado, autorizado, mantenido o
+          promocionado por Titsa.
+        </small>
+      </small>
     </p>
   );
 }
