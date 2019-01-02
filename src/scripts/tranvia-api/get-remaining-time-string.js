@@ -15,21 +15,20 @@ export default function (remainingMinutes) {
 function _minutesToHoursAndSeconds(minutes) {
   let hours = minutes / 60;
   let roundHours = Math.floor(hours);
-  let remainderMinutes = (hours - roundHours) * 60;
-  let roundMinutes = Math.round(remainderMinutes);
+  let remainderMinutes = Math.round((hours - roundHours) * 60);
 
   let hoursString = `${roundHours} hora${roundHours > 1 ? 's' : ''}`
-  let minutesString = `${roundMinutes} minutos`
+  let minutesString = `${remainderMinutes} minutos`
 
-  if(roundHours > 0 && roundMinutes > 0) {
-    return `${roundHours} y ${roundMinutes}`
+  if(roundHours > 0 && remainderMinutes > 0) {
+    return `${hoursString} y ${minutesString}`
   } 
 
   if(roundHours > 0) {
     return hoursString
   }
 
-  if(roundMinutes > 0) {
+  if(remainderMinutes > 0) {
     return minutesString
   }
 }

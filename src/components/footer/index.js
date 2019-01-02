@@ -15,7 +15,7 @@ export default function Footer({ isFetchingData }) {
       <small class="text-center">
         <small>
           Este sitio no está de ningún modo afiliado, autorizado, mantenido o
-          promocionado por Titsa.
+          promocionado por <a target="_blank" rel="noopener" href="https://metrotenerife.com/">MetroTenerife.</a>
         </small>
       </small>
     </p>
