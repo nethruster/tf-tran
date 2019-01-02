@@ -10,6 +10,9 @@ export default store => ({
         addError(state, "Error al obtener los datos");
       });
   },
+  updateOnlineStatus() {
+    store.setState({ isOnline: navigator.onLine })
+  },
   addError(state, err) {
     let newErrs = [...state.error, err];
     store.setState({ errors: newErrs });

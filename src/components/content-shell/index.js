@@ -30,6 +30,8 @@ export default connect(
       setInterval(() => {
         this.fetchData();
       }, REFRESH_RATE);
+      window.addEventListener('online', this.props.updateOnlineStatus)
+      window.addEventListener('offline', this.props.updateOnlineStatus)
     }
 
     fetchData() {
