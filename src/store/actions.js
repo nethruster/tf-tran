@@ -11,7 +11,7 @@ export default store => ({
       });
   },
   updateOnlineStatus() {
-    store.setState({ isOnline: navigator.onLine })
+    store.setState({ isOnline: navigator.onLine });
   },
   addError(state, err) {
     let newErrs = [...state.error, err];
@@ -28,8 +28,13 @@ export default store => ({
   resetCurrentStop(state) {
     store.setState({ selectedStop: "" });
   },
-  setSearchKey(state, value) {
-    value = value.trim().toLowerCase();
-    store.setState({ searchKey: value });
+  setSearchState(state, searchState, filteredRoutes, hasResults) {
+    let newState = {
+      searchState,
+      filteredRoutes,
+      hasResults
+    };
+
+    store.setState({ search: newState });
   }
 });

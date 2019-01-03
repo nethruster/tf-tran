@@ -3,24 +3,23 @@ import { connect } from "unistore/preact";
 import { bind } from "decko";
 
 import { actions } from "store";
+import { getFilteredRoutesArray, checkSearchResults } from "utils";
 
 import style from "./styles.scss";
 
 export default connect(
-  "searchKey",
+  ["routes", "search"],
   actions
 )(
   class SearchInput extends Component {
-    componentWillUnmount() {
-      if (this.searchInput) {
-        this.searchInput.value = "";
-        this.props.setSearchKey("");
-      }
-    }
-
     @bind
     handleInputValueChange(event) {
-      this.props.setSearchKey(event.target.value);
+      let searchKey = event.target.value.trim();
+      let filteredRoutes = getFilteredRoutesArray(this.props.routes, searchKey);
+      let searchState = searchKey !== "";
+      let hasResults = checkSearchResults(filteredRoutes);
+
+      this.props.setSearchState(searchState, filteredRoutes, hasResults);
     }
 
     render({ id }) {

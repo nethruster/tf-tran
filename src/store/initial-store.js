@@ -3,7 +3,11 @@ const initialStore = {
   isOnline: navigator.onLine,
   errors: [],
   selectedStop: "",
-  searchKey: ""
+  search: {
+    searchState: false,
+    filteredRoutes: null,
+    hasResults: false
+  }
 };
 
 export default initialStore;
