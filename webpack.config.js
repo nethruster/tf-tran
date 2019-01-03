@@ -1,7 +1,9 @@
 const path = require('path')
 const webpack = require('webpack')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractCssChunks = require('extract-css-chunks-webpack-plugin')
+const { GenerateSW } = require('workbox-webpack-plugin')
 
 const isProduction = process.env.NODE_ENV === 'production' // Check if we are in production mode
 
@@ -111,6 +113,31 @@ module.exports = {
         minifyJS: true
       },
       template: APP_DIR + '/index.html'
+    }),
+    new CopyWebpackPlugin([{ from: APP_DIR + '/assets/favicons', to: BUILD_DIR + '/assets/favicons'}]),
+    new GenerateSW({
+      runtimeCaching: [
+        {
+          urlPattern: /\/api\/tranvia/,
+          handler: 'networkOnly'
+        },
+        {
+          urlPattern: new RegExp('^https://fonts.(?:googleapis|gstatic).com/(.*)'),
+          handler: 'cacheFirst'
+        },
+        {
+          urlPattern: /\/assets\/.*/,
+          handler: 'cacheFirst'
+        }
+        // {
+        //   urlPattern: /.*/,
+        //   handler: 'cacheFirst'
+        // }
+      ],
+      navigateFallback: '/',
+      swDest: "sw.js",
+      clientsClaim: true,
+      skipWaiting: true
     })
   ]
 }

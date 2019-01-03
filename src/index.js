@@ -5,6 +5,7 @@ import "preact/debug"; // TODO Remove on prod
 import ContentShell from "content-shell";
 
 import { store } from "store";
+import loadSW from 'load-sw'
 
 import "./styles/index.scss";
 
@@ -21,3 +22,4 @@ class App extends Component {
 }
 
 render(<App />, mountPoint, mountPoint.lastElementChild);
+loadSW()
