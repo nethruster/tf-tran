@@ -2,6 +2,8 @@
     .footerWrapper {
         margin: 8px 0;
         opacity: .7;
+        background-color: var(--color-primary);
+        z-index: 1;
 
         small,
         span {

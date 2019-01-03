@@ -57,7 +57,6 @@ export default connect(
       return (
         <div class={`flex flex-dc ${style.wrapper}`}>
           <div class={style.contentWrapper}>
-            <div class={style.backgroundHeader} />
             <ContentRouter />
           </div>
           <Footer isFetchingData={this.state.isFetching} />

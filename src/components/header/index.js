@@ -15,15 +15,18 @@ export default connect(["selectedStop", "routes"])(function Header({
 }) {
   return (
     <div class={`flex flex-dc ${style.headerWrapper}`}>
-      {routes && selectedStop && <BackButton />}
-      <Logo />
-      {routes == null ? (
-        <Loader color="var(--color-primary)" />
-      ) : selectedStop ? (
-        <StopTitle title={selectedStop} />
-      ) : (
-        <SearchBar />
-      )}
+      <div class={style.backgroundHeader} />
+      <div class={`flex flex-dc ${style.headerContent}`}>
+        {routes && selectedStop && <BackButton />}
+        <Logo />
+        {routes == null ? (
+          <Loader color="var(--color-primary)" />
+        ) : selectedStop ? (
+          <StopTitle title={selectedStop} />
+        ) : (
+          <SearchBar />
+        )}
+      </div>
     </div>
   );
 });
