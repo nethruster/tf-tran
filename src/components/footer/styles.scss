@@ -8,5 +8,13 @@
             text-align: center;
             margin: 0 16px;
         }
+
+        a {
+            text-decoration: underline;
+            color: var(--color-bg);
+            opacity: .8;
+
+            &:hover { opacity: 1; }
+        }
     }
 }

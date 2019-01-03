@@ -13,10 +13,8 @@ export default function Footer({ isFetchingData }) {
         <FooterLinks />
       </span>
       <small class="text-center">
-        <small>
           Este sitio no está de ningún modo afiliado, autorizado, mantenido o
           promocionado por <a target="_blank" rel="noopener" href="https://metrotenerife.com/">MetroTenerife.</a>
-        </small>
       </small>
     </p>
   );

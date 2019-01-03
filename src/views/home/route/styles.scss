@@ -4,8 +4,6 @@
         border-radius: var(--base-br);
         background-color: var(--color-tertiary);
         width: 100%;
-        
-        &:not(:last-child) { margin-bottom: 52px; }
 
         &::before {
             content: "Línea " attr(data-line);        
@@ -18,6 +16,8 @@
             z-index: -2;
             align-self: center;
         }
+
+        &:not(:last-child) { margin-bottom: 52px; }
 
         &:empty { display: none; }
     }

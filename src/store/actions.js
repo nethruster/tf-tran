@@ -1,10 +1,10 @@
-import tranvia from "../scripts/tranvia-api";
+import tranviaAPI from "../scripts/tranvia-api";
 
 export default store => ({
   updateRoutes(state) {
-    return tranvia
+    return tranviaAPI
       .fetchAndParse()
-      .then(data => ({ routes: data, lastUpdate: Date.now() }))
+      .then(data => ({ routes: data }))
       .catch(err => {
         console.error(err);
         addError(state, "Error al obtener los datos");

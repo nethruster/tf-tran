@@ -1,6 +1,6 @@
 var destinations = [["La Trinidad", "Intercambiador"], ["La Cuesta", "Tíncer"]];
 
-export default function(route, direction) {
+export default function getDirectionDestination(route, direction) {
   let routeArr = destinations[route];
   if (routeArr === undefined) {
     return "Error, no hay suficiente información sobre la linea.";

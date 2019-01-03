@@ -2,11 +2,11 @@
     .listingItem { 
         &:hover { background-color: var(--color-secondary-lighter); }
 
-        &:only-child { border-radius: var(--base-br) !important; }
-
         &:first-child { border-radius: var(--base-br) var(--base-br) 0 0; }
 
         &:last-child { border-radius: 0 0 var(--base-br) var(--base-br); }
+
+        &:only-child { border-radius: var(--base-br); }
     }
 
     .listingItemLink {
