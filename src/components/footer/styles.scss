@@ -2,11 +2,21 @@
     .footerWrapper {
         margin: 8px 0;
         opacity: .7;
+        background-color: var(--color-primary);
+        z-index: 1;
 
         small,
         span {
             text-align: center;
             margin: 0 16px;
+        }
+
+        a {
+            text-decoration: underline;
+            color: var(--color-bg);
+            opacity: .8;
+
+            &:hover { opacity: 1; }
         }
     }
 }

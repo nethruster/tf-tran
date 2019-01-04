@@ -1,37 +1,23 @@
 :local {
-    .backgroundHeader {
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-image: var(--home-image), var(--home-gradient);
-        height: var(--header-height);
-        width: 100%;
-        z-index: -2;
-
-        &::after {
-            content: "";
-            border-radius: 100% 100% 0 0;
-            background-color: var(--color-primary);
-            width: 120%;
-            min-height: 150px;
-            position: absolute;
-            margin-left: auto;
-            left: 50%;
-            -webkit-transform: translate(-50%,-50%);
-            transform: translate(-50%,-50%);
-            top: 190px;
-            pointer-events: none;
-            z-index: -1;
-        }
-    }
-
     .wrapper {
+
         position: relative;
         min-height: 100%;
         width: 100%;
         overflow-x: hidden;
         overflow-y: auto;
+        max-width: 900px;
+        margin: 0 auto;
+        background-color: var(--color-primary);
+        
+        @media screen and (min-width: 900px) {
+            box-shadow: var(--black-box-shadow);
+        }
     }
 
-    .contentWrapper { flex-grow: 1; }
+    .contentWrapper {
+        z-index: 1;
+        flex-grow: 1;
+        background-color: var(--color-primary);
+    }
 }

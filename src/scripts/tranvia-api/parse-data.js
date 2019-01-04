@@ -1,4 +1,6 @@
-export default function(data) {
+import { capitalize } from "../utils";
+
+export default function parseData(data) {
   if (!data) {
     throw new Error("Empty data provided");
   }
@@ -9,6 +11,7 @@ export default function(data) {
     if (routes[item.route - 1] === undefined) {
       routes[item.route - 1] = { name: `${item.route}`, stops: {} };
     }
+
     let route = routes[item.route - 1];
     item.stopDescription = capitalize(item.stopDescription);
 
@@ -18,27 +21,24 @@ export default function(data) {
     if (!route.stops.hasOwnProperty(item.stopDescription)) {
       route.stops[item.stopDescription] = [[], []];
     }
+
     route.stops[item.stopDescription][item.direction - 1].push(tram);
   });
-  for (var i = routes.length - 1; i >= 0; i--) {
-    sortRoute(routes[i]);
+
+  for (let i = routes.length - 1; i >= 0; i--) {
+    sortRouteStops(routes[i]);
   }
 
   return routes;
 }
 
-function sortRoute(route) {
-  var sortFunction = (a, b) => a.remainingMinutes - b.remainingMinutes;
-  Object.keys(route.stops).forEach(item => {
-    route.stops[item][0].sort(sortFunction);
-    route.stops[item][1].sort(sortFunction);
-  });
+function sortStops(stopA, stopB) {
+  return stopA.remainingMinutes - stopB.remainingMinutes;
 }
 
-function capitalize(string) {
-  return string
-    .toLowerCase()
-    .split(" ")
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
+function sortRouteStops(route) {
+  Object.keys(route.stops).forEach(item => {
+    route.stops[item][0].sort(sortStops);
+    route.stops[item][1].sort(sortStops);
+  });
 }

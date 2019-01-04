@@ -1,3 +1,3 @@
-export default function(routes, routeName) {
+export default function getRouteByName(routes, routeName) {
   return routes[parseInt(routeName) - 1];
 }

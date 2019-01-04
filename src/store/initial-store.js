@@ -1,10 +1,13 @@
 const initialStore = {
   routes: null,
-  lastUpdate: 0,
   isOnline: navigator.onLine,
   errors: [],
   selectedStop: "",
-  searchKey: ""
+  search: {
+    searchState: false,
+    filteredRoutes: null,
+    hasResults: false
+  }
 };
 
 export default initialStore;

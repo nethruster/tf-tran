@@ -1,10 +1,8 @@
 import { h } from "preact";
 
-import style from "./styles.scss";
-
 export default function FooterLinks() {
   return (
-    <small class={style.authorInfo}>
+    <small>
       Un proyecto de&nbsp;
       <a target="_blank" rel="noopener" href="https://nethruster.com">
         Nethruster

@@ -30,6 +30,7 @@ export default connect(
       setInterval(() => {
         this.fetchData();
       }, REFRESH_RATE);
+
       window.addEventListener('online', this.props.updateOnlineStatus)
       window.addEventListener('offline', this.props.updateOnlineStatus)
     }
@@ -56,7 +57,6 @@ export default connect(
       return (
         <div class={`flex flex-dc ${style.wrapper}`}>
           <div class={style.contentWrapper}>
-            <div class={style.backgroundHeader} />
             <ContentRouter />
           </div>
           <Footer isFetchingData={this.state.isFetching} />
