@@ -1,8 +1,6 @@
 :local {
     .wrapper {
-
         position: relative;
-        min-height: 100%;
         width: 100%;
         overflow-x: hidden;
         overflow-y: auto;
@@ -12,7 +10,20 @@
         
         @media screen and (min-width: 900px) {
             box-shadow: var(--black-box-shadow);
+            max-height: 90%;
+            border-radius: var(--base-br);
         }
+    }
+
+    .innerWrapper {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-width: 900px;
+        margin: 0 auto;
+        background-color: var(--color-primary);
     }
 
     .contentWrapper {

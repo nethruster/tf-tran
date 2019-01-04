@@ -55,11 +55,13 @@ export default connect(
 
     render() {
       return (
-        <div class={`flex flex-dc ${style.wrapper}`}>
+        <div class={`${style.wrapper}`}>
+        <div  class={`flex flex-dc cscroll ${style.innerWrapper}`}>
           <div class={style.contentWrapper}>
             <ContentRouter />
           </div>
           <Footer isFetchingData={this.state.isFetching} />
+          </div>
         </div>
       );
     }

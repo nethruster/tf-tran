@@ -5,6 +5,11 @@
 
         --radius: 0.25em;
 
+        --cscrollbar-thumb-bg-colour: hsla(0, 0%, 0%, 0.2);
+        --cscrollbar-track-bg-colour: hsla(0, 0%, 100%, 0.08);
+        --cscrollbar-width: 6px;
+        --cscrollbar-height: 6px;
+
         --home-gradient: linear-gradient(to bottom, #00a2ff, #39b5fd);
         --home-image: url('../assets/bg.svg');
 
