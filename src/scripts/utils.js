@@ -7,7 +7,7 @@ export function capitalize(string) {
 }
 
 export function getFilteredRoutesArray(routes, filterKey) {
-  let filteredRoutesArray = JSON.parse(JSON.stringify(routes));
+  let filteredRoutesArray = _deepCopyRoutes(routes);
   filterKey = filterKey.toLowerCase().trim();
 
   filteredRoutesArray.forEach(route => {
@@ -41,4 +41,17 @@ function _filterObjectByKeys(object, filterKeys) {
       (accumulator, currentValue) => Object.assign(accumulator, currentValue),
       {}
     );
+}
+
+function _deepCopyRoutes(routes) {
+  let newArray = [];
+
+  routes.forEach(route => {
+    newArray.push({
+      name: route.name,
+      stops: Object.assign({}, route.stops)
+    });
+  });
+
+  return newArray;
 }
