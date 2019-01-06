@@ -7,7 +7,7 @@ import Home from "../../views/home";
 import Stop from "../../views/stop";
 import NoConnection from "../../views/no-connection";
 import NoResults from "../../views/no-results";
-import LostConnection from "./lost-connection";
+import LostConnection from "./warnings/lost-connection";
 
 import { actions } from "store";
 
