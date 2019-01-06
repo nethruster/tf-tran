@@ -8,10 +8,6 @@ export default store => ({
         routes: data,
         lastUpdated: Date.now()
       }))
-      .catch(err => {
-        console.error(err);
-        addError(state, "Error al obtener los datos");
-      });
   },
   updateOnlineStatus() {
     return new Promise((resolve, reject) => {
