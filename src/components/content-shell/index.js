@@ -10,7 +10,7 @@ import { REFRESH_RATE } from "vars";
 import style from "./styles.scss";
 
 export default connect(
-  "routes",
+  ["routes", "isOnline"],
   actions
 )(
   class ContentShell extends Component {
@@ -31,12 +31,20 @@ export default connect(
         this.fetchData();
       }, REFRESH_RATE);
 
-      window.addEventListener('online', this.props.updateOnlineStatus)
-      window.addEventListener('offline', this.props.updateOnlineStatus)
+      window.addEventListener("online", () => {
+        this.props.updateOnlineStatus().then(() => {
+          this.fetchData();
+        });
+      });
+      window.addEventListener("offline", () => {
+        this.props.updateOnlineStatus().then(() => {
+          this.setState({ isFetching: false });
+        });
+      });
     }
 
     fetchData() {
-      if (this.state.isFetching) {
+      if (this.state.isFetching || !this.props.isOnline) {
         return;
       }
 
@@ -56,11 +64,11 @@ export default connect(
     render() {
       return (
         <div class={`${style.wrapper}`}>
-        <div  class={`flex flex-dc cscroll ${style.innerWrapper}`}>
-          <div class={style.contentWrapper}>
-            <ContentRouter />
-          </div>
-          <Footer isFetchingData={this.state.isFetching} />
+          <div class={`flex flex-dc cscroll ${style.innerWrapper}`}>
+            <div class={style.contentWrapper}>
+              <ContentRouter />
+            </div>
+            <Footer isFetchingData={this.state.isFetching} />
           </div>
         </div>
       );

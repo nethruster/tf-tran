@@ -9,17 +9,22 @@ import Loader from "loader";
 
 import style from "./styles.scss";
 
-export default connect(["selectedStop", "routes"])(function Header({
+export default connect(["selectedStop", "routes", "isOnline"])(function Header({
   selectedStop,
-  routes
+  routes,
+  isOnline
 }) {
   return (
     <div class={`flex flex-dc ${style.headerWrapper}`}>
-      <div class={style.backgroundHeader} />
+      <div
+        class={`${style.backgroundHeader} ${
+          isOnline ? "" : style.noConnection
+        }`}
+      />
       <div class={`flex flex-dc ${style.headerContent}`}>
         {routes && selectedStop && <BackButton />}
         <Logo />
-        {routes == null ? (
+        {isOnline && routes == null ? (
           <Loader color="var(--color-primary)" />
         ) : selectedStop ? (
           <StopTitle title={selectedStop} />

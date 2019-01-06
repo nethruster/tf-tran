@@ -4,14 +4,20 @@ export default store => ({
   updateRoutes(state) {
     return tranviaAPI
       .fetchAndParse()
-      .then(data => ({ routes: data }))
+      .then(data => ({
+        routes: data,
+        lastUpdated: Date.now()
+      }))
       .catch(err => {
         console.error(err);
         addError(state, "Error al obtener los datos");
       });
   },
   updateOnlineStatus() {
-    store.setState({ isOnline: navigator.onLine });
+    return new Promise((resolve, reject) => {
+      store.setState({ isOnline: navigator.onLine });
+      resolve();
+    });
   },
   addError(state, err) {
     let newErrs = [...state.error, err];

@@ -1,0 +1,12 @@
+:local {
+    .warningWrapper{
+        padding: 4px 16px;
+        margin: 0 auto;
+        border-radius: var(--base-br);
+        text-align: center;
+        background-color: var(--color-tertiary);
+        margin: 0 16px;
+
+        small { flex-wrap: wrap; }
+    }
+}

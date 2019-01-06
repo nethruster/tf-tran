@@ -1,5 +1,6 @@
 const initialStore = {
   routes: null,
+  lastUpdated: Date.now(),
   isOnline: navigator.onLine,
   errors: [],
   selectedStop: "",

@@ -33,6 +33,7 @@ export default connect(
           class={style.searchInput}
           placeholder="Busca tu estación..."
           aria-label="Buscar estación"
+          disabled={this.props.routes === null}
           onInput={this.handleInputValueChange}
         />
       );

@@ -136,6 +136,7 @@ module.exports = {
       ],
       navigateFallback: '/',
       swDest: "sw.js",
+      directoryIndex: 'index.html',
       clientsClaim: true,
       skipWaiting: true
     })
