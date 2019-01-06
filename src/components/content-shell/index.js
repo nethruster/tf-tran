@@ -57,6 +57,7 @@ export default connect(
         })
         .catch(err => {
           console.error(err);
+          this.props.addError("Error al obtener los datos")
           this.setState({ isFetching: false });
         });
     }
