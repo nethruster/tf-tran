@@ -8,12 +8,12 @@
 
     <meta name="description" content="Consulta en tiempo real de tranvias y paneles de información.">
     <meta name="author" content="Nethruster">
-    <!-- <link rel="canonical" href="https://www..com/" /> -->
+    <link rel="canonical" href="https://tranvia.ml" />
     <meta property="og:type" content="website"/>
 
     <meta property="og:title" content="Próximo Tranvía" />
     <meta property="og:description" content="Consulta en tiempo real de tranvias y paneles de información." />
-    <!-- <meta property="og:url" content="https://.com"/> -->
+    <meta property="og:url" content="https://tranvia.ml" />
     <meta property="og:image" content="/assets/favicons/apple-touch-icon-precomposed.png" />
 
     <meta name="twitter:card" content="summary">
@@ -40,8 +40,14 @@
     <div class="background-l"></div>
     <div class="overlay"></div>
     <noscript>
-        <!-- TODO make this prettier -->
-        <h1>Por favor habilite javascript para visualizar este sitio web</h1>
+        <div style="position: fixed; top: 0; left: 0; display: flex; justify-content: center; align-items: center;width: 100vw; height: 100vh;">
+            <div style="background-color: #fff; padding: 32px; border-radius: 32px; margin: 32px; overflow: hidden; min-height: 50%;display: flex; flex-direction: column; justify-content: center; align-items: center;box-shadow: 0 3px 20px rgba(0,0,0,.05);">
+                <svg style="width:96px;height:96px" viewBox="0 0 24 24">
+                    <path fill="#464646" d="M0.75,8C0.75,8 5,7 8,9C8,9 8.5,12.75 10.5,12.75V11C10.5,11 11,12 12,12C13,12 13.5,11 13.5,11V12.75C15.5,12.75 16,9 16,9C19,7 23.25,8 23.25,8C21.25,9 21,12.5 21,12.5C17,12.5 17,15.75 17,15.75C12,14.75 12,18.5 12,18.5C12,18.5 12,14.75 7,15.75C7,15.75 7,12.5 3,12.5C3,12.5 2.75,9 0.75,8Z" />
+                </svg>
+                <h4 style="margin: 16px;">Por favor, habilite javascript para visualizar este sitio web.</h4>
+            </div>
+        </div>
     </noscript>
 </body>
 </html>
