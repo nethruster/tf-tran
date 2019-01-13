@@ -28,11 +28,11 @@ function renderMainContent(search, isOnline, routes) {
 export default connect(
   ["routes", "isOnline", "search"],
   actions
-)(function ContentRouter({ routes, isOnline, search }) {
+)(function ContentRouter({ routes, isOnline, search, isScrollOutsideHeader }) {
   return (
     <BrowserRouter>
       <div>
-        <Header />
+        <Header isScrollOutsideHeader={isScrollOutsideHeader} />
         {routes !== null && !isOnline && <LostConnection />}
         {renderMainContent(search, isOnline, routes)}
       </div>

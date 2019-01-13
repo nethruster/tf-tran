@@ -12,7 +12,8 @@ import style from "./styles.scss";
 export default connect(["selectedStop", "routes", "isOnline"])(function Header({
   selectedStop,
   routes,
-  isOnline
+  isOnline,
+  isScrollOutsideHeader
 }) {
   return (
     <div class={`flex flex-dc ${style.headerWrapper}`}>
@@ -22,7 +23,7 @@ export default connect(["selectedStop", "routes", "isOnline"])(function Header({
         }`}
       />
       <div class={`flex flex-dc ${style.headerContent}`}>
-        {routes && selectedStop && <BackButton />}
+        {routes && selectedStop && <BackButton isScrollOutsideHeader={isScrollOutsideHeader} />}
         <Logo />
         {isOnline && routes == null ? (
           <Loader color="var(--color-primary)" />

@@ -1,5 +1,6 @@
 import { h, Component } from "preact";
 import { connect } from "unistore/preact";
+import { bind } from 'decko'
 
 import ContentRouter from "content-router";
 import Footer from "footer";
@@ -18,7 +19,8 @@ export default connect(
       super(props);
 
       this.state = {
-        isFetching: false
+        isFetching: false,
+        isScrollOutsideHeader: false
       };
     }
 
@@ -36,11 +38,32 @@ export default connect(
           this.fetchData();
         });
       });
+
       window.addEventListener("offline", () => {
         this.props.updateOnlineStatus().then(() => {
           this.setState({ isFetching: false });
         });
       });
+    }
+
+    componentDidMount() {
+      let isScrollOutsideHeader = this.checkContainerScrollTop()
+
+      if(isScrollOutsideHeader) {
+        this.setState({isScrollOutsideHeader})
+      }
+
+      this.scrollContainer.addEventListener('scroll', e => {
+        isScrollOutsideHeader = this.checkContainerScrollTop()
+
+        if(isScrollOutsideHeader != this.state.isScrollOutsideHeader) {
+          this.setState({isScrollOutsideHeader})
+        }
+      })      
+    }
+
+    checkContainerScrollTop() {
+      return this.scrollContainer.scrollTop >= 100
     }
 
     fetchData() {
@@ -65,9 +88,10 @@ export default connect(
     render() {
       return (
         <div class={`${style.wrapper}`}>
-          <div class={`flex flex-dc cscroll ${style.innerWrapper}`}>
+          <div class={`flex flex-dc cscroll ${style.innerWrapper}`} ref={(el) => {this.scrollContainer = el}}>
             <div class={style.contentWrapper}>
-              <ContentRouter />
+
+              <ContentRouter isScrollOutsideHeader={this.state.isScrollOutsideHeader} />
             </div>
             <Footer isFetchingData={this.state.isFetching} />
           </div>

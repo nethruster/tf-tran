@@ -1,10 +1,24 @@
 :local {
     .backButton {
-        position: absolute;
+        z-index: 2;
+        position: fixed;
         margin: 12px 16px;
         background-color: var(--color-primary);
         border-radius: 100%;
         padding: 6px;
         box-shadow: var(--black-box-shadow);
+        transition: background-color .3s var(--base-transition-timing);
+
+        svg {
+            path { transition: fill .3s var(--base-transition-timing); }
+        }
+    }
+
+    .alternativeBackButton {
+        background-color: var(--color-bg);
+
+        svg {
+             path {  fill: var(--color-primary); }
+        }
     }
 }
