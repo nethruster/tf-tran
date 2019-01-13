@@ -10,6 +10,8 @@
         --cscrollbar-width: 6px;
         --cscrollbar-height: 6px;
 
+        --base-transition-timing: cubic-bezier(.25,1.43,.35,1.69);
+
         --home-gradient: linear-gradient(to bottom, #00a2ff, #39b5fd);
         --home-image: url('../assets/bg.svg');
 

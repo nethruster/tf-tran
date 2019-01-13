@@ -6,7 +6,7 @@ import style from "./styles.scss";
 
 export default function HeaderLogo() {
   return (
-    <div>
+    <div class="come-in">
       <h1 class={`flex flex-full-center ${style.logoTitle}`}>
         <Icon name="train" size="22" color="var(--color-primary)" />
         &nbsp;Próximo Tranvía
