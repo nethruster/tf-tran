@@ -4,8 +4,17 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractCssChunks = require('extract-css-chunks-webpack-plugin')
 const { GenerateSW } = require('workbox-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
 
 const isProduction = process.env.NODE_ENV === 'production' // Check if we are in production mode
+
+const cleanOptions = {
+  root: path.resolve(__dirname),
+  exclude: ['.gitkeep'],
+  verbose: true,
+  dry: !isProduction
+}
 
 const BUILD_DIR = path.resolve(__dirname, 'dist')
 const APP_DIR = path.resolve(__dirname, 'src')
@@ -16,12 +25,11 @@ module.exports = {
     main: APP_DIR + '/index.js'
   },
   target: 'web',
-  devtool: 'source-map',
   optimization: {
     splitChunks: {
       cacheGroups: {
         vendor: {
-          test: /preact|preact-compat|react-router-dom|decko|react-ink/,
+          test: /preact|preact-compat|react-router-dom|decko|react-ink|unistore|webpack|workbox-webpack-plugin/,
           chunks: 'initial',
           name: 'vendor',
         }
@@ -99,7 +107,12 @@ module.exports = {
     modules: [APP_DIR + '/components', APP_DIR + '/store', APP_DIR + '/scripts', 'node_modules']
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    new CleanWebpackPlugin(BUILD_DIR, cleanOptions),
+    isProduction ? new CompressionPlugin({
+      algorithm: 'gzip',
+      test: /\.(html|js|css|json|svg|png|jpeg)$/,
+      minRatio: 0.8
+    }) : new webpack.HotModuleReplacementPlugin(),
     new ExtractCssChunks({
       filename: '[name]-[hash:6].css',
       chunkFilename: '[name]-[hash:6].css',
