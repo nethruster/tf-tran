@@ -7,16 +7,24 @@ import Home from "../../views/home";
 import Stop from "../../views/stop";
 import NoConnection from "../../views/no-connection";
 import NoResults from "../../views/no-results";
+import NoServerConnection from '../../views/no-server-connection'
 import ConnectionError from "./warnings/connection-error";
 
 import { actions } from "store";
 
-function renderMainContent(search, isOnline, routes) {
-  if (!isOnline && routes === null) {
+function renderMainContent(search, isOnline, routes, fetchEndedSuccessfully) {
+   if (!isOnline && routes === null) {
     return <NoConnection />;
-  } else if (search.searchState && !search.hasResults) {
+  }
+
+  if(routes === null && !fetchEndedSuccessfully) {
+    return <NoServerConnection />;
+  }
+  
+  if (search.searchState && !search.hasResults) {
     return <NoResults />;
   }
+
   return (
     <Switch>
       <Route exact path="/" component={Home} />
@@ -26,7 +34,7 @@ function renderMainContent(search, isOnline, routes) {
 }
 
 export default connect(
-  ["routes", "isOnline", "fetchEndedSuccessfully","search"],
+  ["routes", "isOnline", "fetchEndedSuccessfully", "search"],
   actions
 )(function ContentRouter({ routes, isOnline, fetchEndedSuccessfully, search, isScrollOutsideHeader }) {
   return (
@@ -34,7 +42,7 @@ export default connect(
       <div>
         <Header isScrollOutsideHeader={isScrollOutsideHeader} />
         {routes !== null && !(isOnline && fetchEndedSuccessfully) && <ConnectionError global={!isOnline} />}
-        {renderMainContent(search, isOnline, routes)}
+        {renderMainContent(search, isOnline, routes, fetchEndedSuccessfully)}
       </div>
     </BrowserRouter>
   );

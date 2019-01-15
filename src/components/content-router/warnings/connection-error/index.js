@@ -18,12 +18,12 @@ export default connect(
       super(props);
 
       this.state = {
-        getTimePassedSince: ""
+        timePassedSince: ""
       };
     }
 
     componentDidMount() {
-      if (this.state.getTimePassedSince == "") {
+      if (this.state.timePassedSince == "") {
         this.getTimePassedSince();
       }
       setInterval(() => {
@@ -37,12 +37,12 @@ export default connect(
       let minutes = Math.floor(seconds / 60);
 
       if (seconds <= 60) {
-        this.setState({ getTimePassedSince: `hace menos de un minuto` });
+        this.setState({ timePassedSince: `hace menos de un minuto` });
         return;
       }
 
       if (minutes >= 30) {
-        this.setState({ getTimePassedSince: `hace más de media hora` });
+        this.setState({ timePassedSince: `hace más de media hora` });
         return;
       }
 
@@ -52,7 +52,7 @@ export default connect(
     @bind
     updateTimePassed(minutes) {
       this.setState({
-        getTimePassedSince: `hace ${getRemainingMinutesString(
+        timePassedSince: `hace ${getRemainingMinutesString(
           minutes
         ).toLowerCase()}`
       });
@@ -63,9 +63,19 @@ export default connect(
         <div class={style.warningWrapper}>
           <p>
             <small class="flex flex-full-center">
-              {this.props.global ? <Icon name="wifi-off" color="#DD2C00" size="16" /> : <Icon name="error" color="#DD2C00" size="16" /> }
-              &nbsp;&nbsp;<span>{this.props.global ? "Se ha perdido la conexión." : "No se ha podido actualizar la información"}</span>&nbsp;
-              <span>Última actualización: {this.state.getTimePassedSince}</span>
+              {this.props.global ? (
+                <Icon name="wifi-off" color="#DD2C00" size="16" />
+              ) : (
+                <Icon name="error" color="#DD2C00" size="16" />
+              )}
+              &nbsp;&nbsp;
+              <span>
+                {this.props.global
+                  ? "Se ha perdido la conexión."
+                  : "No se ha podido actualizar la información."}
+              </span>
+              &nbsp;
+              <span>Última actualización: {this.state.timePassedSince}</span>
             </small>
           </p>
         </div>
