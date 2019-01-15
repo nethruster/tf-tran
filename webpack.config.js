@@ -7,13 +7,13 @@ const { GenerateSW } = require('workbox-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
 
-const isProduction = process.env.NODE_ENV === 'production' // Check if we are in production mode
+const isProduction = process.argv.indexOf('-p') !== -1 // Check if we are in production mode
 
 const cleanOptions = {
   root: path.resolve(__dirname),
   exclude: ['.gitkeep'],
   verbose: true,
-  dry: !isProduction
+  dry: false
 }
 
 const BUILD_DIR = path.resolve(__dirname, 'dist')
