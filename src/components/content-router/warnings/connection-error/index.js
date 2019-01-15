@@ -63,8 +63,8 @@ export default connect(
         <div class={style.warningWrapper}>
           <p>
             <small class="flex flex-full-center">
-              <Icon name="wifi-off" color="#DD2C00" size="16" />
-              &nbsp;&nbsp;<span>Se ha perdido la conexión.</span>&nbsp;
+              {this.props.global ? <Icon name="wifi-off" color="#DD2C00" size="16" /> : <Icon name="error" color="#DD2C00" size="16" /> }
+              &nbsp;&nbsp;<span>{this.props.global ? "Se ha perdido la conexión." : "No se ha podido actualizar la información"}</span>&nbsp;
               <span>Última actualización: {this.state.getTimePassedSince}</span>
             </small>
           </p>

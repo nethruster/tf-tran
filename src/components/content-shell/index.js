@@ -77,11 +77,12 @@ export default connect(
         .updateRoutes()
         .then(() => {
           this.setState({ isFetching: false });
+          this.props.SetFetchEndedSuccessfully(true)
         })
         .catch(err => {
           console.error(err);
-          this.props.addError("Error al obtener los datos")
           this.setState({ isFetching: false });
+          this.props.SetFetchEndedSuccessfully(false)
         });
     }
 
