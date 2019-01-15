@@ -128,7 +128,10 @@ module.exports = {
       template: APP_DIR + '/index.html',
       inject: false
     }),
-    new CopyWebpackPlugin([{ from: APP_DIR + '/assets/favicons', to: BUILD_DIR + '/assets/favicons'}]),
+    new CopyWebpackPlugin([
+      { from: APP_DIR + '/assets/favicons', to: BUILD_DIR + '/assets/favicons'},
+      { from: APP_DIR + '/assets/robots.txt', to: BUILD_DIR + '/robots.txt'}
+    ]),
     new GenerateSW({
       runtimeCaching: [
         {
