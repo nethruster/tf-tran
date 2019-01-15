@@ -5,7 +5,7 @@
 # install dependencies
 yarn install
 
-# run development mode with hot reload and sourcemaps at localhost:4000
+# run development mode with hot reload and sourcemaps at localhost:8081
 yarn start
 
 # build for production with minification, compression, hashing and autoprefixer
