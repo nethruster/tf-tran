@@ -1,5 +1,7 @@
 :local {
     .listingItem { 
+        transition: background-color .1s ease-in;
+
         &:hover { background-color: var(--color-secondary-lighter); }
 
         &:first-child { border-radius: var(--base-br) var(--base-br) 0 0; }

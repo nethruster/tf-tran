@@ -87,10 +87,9 @@ export default connect(
 
     render() {
       return (
-        <div class={`${style.wrapper}`}>
+        <div class={`${style.wrapper} come-in`}>
           <div class={`flex flex-dc cscroll ${style.innerWrapper}`} ref={(el) => {this.scrollContainer = el}}>
             <div class={style.contentWrapper}>
-
               <ContentRouter isScrollOutsideHeader={this.state.isScrollOutsideHeader} />
             </div>
             <Footer isFetchingData={this.state.isFetching} />
