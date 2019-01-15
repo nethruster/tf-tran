@@ -125,7 +125,8 @@ module.exports = {
         minifyCSS: true,
         minifyJS: true
       },
-      template: APP_DIR + '/index.html'
+      template: APP_DIR + '/index.html',
+      inject: false
     }),
     new CopyWebpackPlugin([{ from: APP_DIR + '/assets/favicons', to: BUILD_DIR + '/assets/favicons'}]),
     new GenerateSW({
