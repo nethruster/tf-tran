@@ -7,7 +7,7 @@ import Home from "../../views/home";
 import Stop from "../../views/stop";
 import NoConnection from "../../views/no-connection";
 import NoResults from "../../views/no-results";
-import LostConnection from "./warnings/lost-connection";
+import ConnectionError from "./warnings/connection-error";
 
 import { actions } from "store";
 
@@ -26,14 +26,14 @@ function renderMainContent(search, isOnline, routes) {
 }
 
 export default connect(
-  ["routes", "isOnline", "search"],
+  ["routes", "isOnline", "fetchEndedSuccessfully","search"],
   actions
-)(function ContentRouter({ routes, isOnline, search, isScrollOutsideHeader }) {
+)(function ContentRouter({ routes, isOnline, fetchEndedSuccessfully, search, isScrollOutsideHeader }) {
   return (
     <BrowserRouter>
       <div>
         <Header isScrollOutsideHeader={isScrollOutsideHeader} />
-        {routes !== null && !isOnline && <LostConnection />}
+        {routes !== null && !(isOnline && fetchEndedSuccessfully) && <ConnectionError global={!isOnline} />}
         {renderMainContent(search, isOnline, routes)}
       </div>
     </BrowserRouter>

@@ -32,14 +32,15 @@
     <meta name="msapplication-TileColor" content="#13aff9">
     <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
     <meta name="theme-color" content="#464646">
-
-    <link rel="preload" crossorigin="anonymous" href="https://fonts.googleapis.com/css?family=Exo+2:300,400,500" rel="stylesheet">
+    <link rel="preload" crossorigin="anonymous" href="https://fonts.googleapis.com/css?family=Exo+2:300,400,500" as="style">
+    <%= Object.keys(htmlWebpackPlugin.files.chunks).filter(function(chunck){return htmlWebpackPlugin.files.chunks[chunck].css != "" }).map(function(chunck){return `<link href="${htmlWebpackPlugin.files.chunks[chunck].css}" rel="stylesheet">`}).join('') %>
 </head>
 <body>
     <div id="mount-point"></div>
     <div class="background-r"></div>
     <div class="background-l"></div>
     <div class="overlay"></div>
+    <%= Object.keys(htmlWebpackPlugin.files.chunks).filter(function(chunck){return htmlWebpackPlugin.files.chunks[chunck].entry != ""}).map(function(chunck){return `<script src="${htmlWebpackPlugin.files.chunks[chunck].entry}"></script>`}).join('') %>
     <noscript>
         <div style="position: fixed; top: 0; left: 0; display: flex; justify-content: center; align-items: center;width: 100vw; height: 100vh;">
             <div style="background-color: #fff; padding: 32px; border-radius: 32px; margin: 32px; overflow: hidden; min-height: 50%;display: flex; flex-direction: column; justify-content: center; align-items: center;box-shadow: 0 3px 20px rgba(0,0,0,.05);">
@@ -50,5 +51,6 @@
             </div>
         </div>
     </noscript>
+    <link rel="stylesheet" crossorigin="anonymous" href="https://fonts.googleapis.com/css?family=Exo+2:300,400,500">
 </body>
 </html>

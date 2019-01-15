@@ -15,14 +15,8 @@ export default store => ({
       resolve();
     });
   },
-  addError(state, err) {
-    let newErrs = [...state.error, err];
-    store.setState({ errors: newErrs });
-  },
-  delOldestError(state) {
-    let newErrs = [...state.error];
-    newErrs.shift();
-    store.setState({ errors: newErrs });
+  SetFetchEndedSuccessfully(state, ok) {
+    store.setState({ fetchEndedSuccessfully: ok });
   },
   setCurrentStop(state, stop) {
     store.setState({ selectedStop: stop });
