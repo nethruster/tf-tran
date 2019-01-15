@@ -32,7 +32,12 @@
     <meta name="msapplication-TileColor" content="#13aff9">
     <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
     <meta name="theme-color" content="#464646">
-    <link rel="preload" crossorigin="anonymous" href="https://fonts.googleapis.com/css?family=Exo+2:300,400,500" as="style">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/exo2/v4/7cHrv4okm5zmbt6DCfs7wH8.woff2" as="font" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/exo2/v4/7cHmv4okm5zmbtYoK-4.woff2" as="font" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/exo2/v4/7cHrv4okm5zmbt7bCPs7wH8.woff2" as="font" crossorigin>
+
     <%= Object.keys(htmlWebpackPlugin.files.chunks).filter(function(chunck){return htmlWebpackPlugin.files.chunks[chunck].css != "" }).map(function(chunck){return `<link href="${htmlWebpackPlugin.files.chunks[chunck].css}" rel="stylesheet">`}).join('') %>
 </head>
 <body>
@@ -47,7 +52,7 @@
                 <svg style="width:96px;height:96px" viewBox="0 0 24 24">
                     <path fill="#464646" d="M0.75,8C0.75,8 5,7 8,9C8,9 8.5,12.75 10.5,12.75V11C10.5,11 11,12 12,12C13,12 13.5,11 13.5,11V12.75C15.5,12.75 16,9 16,9C19,7 23.25,8 23.25,8C21.25,9 21,12.5 21,12.5C17,12.5 17,15.75 17,15.75C12,14.75 12,18.5 12,18.5C12,18.5 12,14.75 7,15.75C7,15.75 7,12.5 3,12.5C3,12.5 2.75,9 0.75,8Z" />
                 </svg>
-                <h4 style="margin: 16px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Por favor, habilite javascript para visualizar este sitio web.</h4>
+                <h4 style="margin: 16px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 300;">Por favor, habilite javascript para visualizar este sitio web.</h4>
             </div>
         </div>
     </noscript>
