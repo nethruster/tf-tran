@@ -57,7 +57,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: true,
-              localIdentName: 'wdr[hash:6]'
+              localIdentName: 'tf-tr[hash:6]'
             }
           },
           'postcss-loader',
@@ -143,10 +143,6 @@ module.exports = {
           urlPattern: /\/assets\/.*/,
           handler: 'cacheFirst'
         }
-        // {
-        //   urlPattern: /.*/,
-        //   handler: 'cacheFirst'
-        // }
       ],
       navigateFallback: '/',
       swDest: "sw.js",
