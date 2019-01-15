@@ -32,7 +32,7 @@
     <meta name="msapplication-TileColor" content="#13aff9">
     <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
     <meta name="theme-color" content="#464646">
-    <link rel="preload" crossorigin="anonymous" href="https://fonts.googleapis.com/css?family=Exo+2:300,400,500">
+    <link rel="preload" crossorigin="anonymous" href="https://fonts.googleapis.com/css?family=Exo+2:300,400,500" as="style">
     <%= Object.keys(htmlWebpackPlugin.files.chunks).filter(function(chunck){return htmlWebpackPlugin.files.chunks[chunck].css != "" }).map(function(chunck){return `<link href="${htmlWebpackPlugin.files.chunks[chunck].css}" rel="stylesheet">`}).join('') %>
 </head>
 <body>
