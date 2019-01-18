@@ -1,6 +1,5 @@
 import { h, render, Component } from "preact";
 import { Provider } from "unistore/preact";
-import "preact/debug"; // TODO Remove on prod
 
 import ContentShell from "content-shell";
 

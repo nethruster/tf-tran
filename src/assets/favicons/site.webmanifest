@@ -1,11 +1,15 @@
 {
-    "name": "Próximo Tranvía",
-    "short_name": "Próx Tranvia",
-    "start_url": "/",
+    "name": "Pr\u00f3x. Tranv\u00eda",
+    "short_name": "Tranv\u00eda",
     "icons": [
         {
             "src": "/assets/favicons/android-chrome-192x192.png",
             "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/favicons/android-chrome-384x384.png",
+            "sizes": "384x384",
             "type": "image/png"
         },
         {
@@ -14,7 +18,8 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
+    "theme_color": "#13aff9",
+    "background_color": "#13aff9",
+    "start_url": "/",
     "display": "standalone"
 }
