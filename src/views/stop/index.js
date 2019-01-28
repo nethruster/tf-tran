@@ -22,6 +22,10 @@ export default connect(
       this.stopData = [];
     }
 
+    componentDidMount() {
+      document.querySelector('#scrollContainer').scrollTo(0,0)
+    }
+
     componentWillMount() {
       this.props.setCurrentStop(this.stop);
     }
