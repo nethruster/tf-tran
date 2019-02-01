@@ -15,8 +15,8 @@ export default store => ({
       resolve();
     });
   },
-  SetFetchEndedSuccessfully(state, ok) {
-    store.setState({ fetchEndedSuccessfully: ok });
+  setFetchEndedSuccessfully(state, status) {
+    store.setState({ fetchEndedSuccessfully: status });
   },
   setCurrentStop(state, stop) {
     store.setState({ selectedStop: stop });

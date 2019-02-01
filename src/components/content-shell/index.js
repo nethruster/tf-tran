@@ -77,12 +77,12 @@ export default connect(
         .updateRoutes()
         .then(() => {
           this.setState({ isFetching: false });
-          this.props.SetFetchEndedSuccessfully(true)
+          this.props.setFetchEndedSuccessfully(true)
         })
         .catch(err => {
           console.error(err);
           this.setState({ isFetching: false });
-          this.props.SetFetchEndedSuccessfully(false)
+          this.props.setFetchEndedSuccessfully(false)
         });
     }
 
