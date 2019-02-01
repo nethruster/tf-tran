@@ -8,6 +8,7 @@ import Stop from "../../views/stop";
 import NoConnection from "../../views/no-connection";
 import NoResults from "../../views/no-results";
 import NoServerConnection from '../../views/no-server-connection'
+import NoStops from '../../views/no-stops'
 import ConnectionError from "./warnings/connection-error";
 
 import { actions } from "store";
@@ -20,11 +21,15 @@ function renderMainContent(search, isOnline, routes, fetchEndedSuccessfully) {
   if(routes === null && !fetchEndedSuccessfully) {
     return <NoServerConnection />;
   }
+
+  if(routes && routes.length === 0) {
+    return <NoStops />
+  }
   
   if (search.searchState && !search.hasResults) {
     return <NoResults />;
   }
-
+  
   return (
     <Switch>
       <Route exact path="/" component={Home} />
