@@ -9,6 +9,10 @@
    to = "http://tranviaonline.metrotenerife.com:8180/api/infoStops/infoPanel"
    status = 200
   [[redirects]]
+   from = "http://tranvia.ml/:splat 301!"
+   to = "/index.html"
+   status = 200
+  [[redirects]]
    from = "/*"
    to = "/index.html"
    status = 200
