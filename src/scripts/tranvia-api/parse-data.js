@@ -26,19 +26,19 @@ export default function parseData(data) {
   });
 
   for (let i = routes.length - 1; i >= 0; i--) {
-    sortRouteStops(routes[i]);
+    sortRouteStopArrivals(routes[i]);
   }
 
   return routes;
 }
 
-function sortStops(stopA, stopB) {
+function sortStopArrivals(stopA, stopB) {
   return stopA.remainingMinutes - stopB.remainingMinutes;
 }
 
-function sortRouteStops(route) {
+function sortRouteStopArrivals(route) {
   Object.keys(route.stops).forEach(item => {
-    route.stops[item][0].sort(sortStops);
-    route.stops[item][1].sort(sortStops);
+    route.stops[item][0].sort(sortStopArrivals);
+    route.stops[item][1].sort(sortStopArrivals);
   });
 }
