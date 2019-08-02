@@ -1,7 +1,6 @@
 # example netlify.toml
 [build]
   command = "yarn run build"
-  functions = "functions"
   publish = "dist"
 
   [[redirects]]
@@ -9,9 +8,10 @@
    to = "http://tranviaonline.metrotenerife.com:8180/api/infoStops/infoPanel"
    status = 200
   [[redirects]]
-   from = "http://tranvia.ml/:splat 301!"
-   to = "/index.html"
-   status = 200
+   from = "https://tf-tran.netlify.com/*"
+   to = "https://tranvia.ml/:splat"
+   force = true
+   status = 301
   [[redirects]]
    from = "/*"
    to = "/index.html"
