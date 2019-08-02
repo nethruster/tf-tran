@@ -1,4 +1,5 @@
 node_modules/
+.netlify/
 dist/
 !dist/.gitkeep
 yarn-error*
