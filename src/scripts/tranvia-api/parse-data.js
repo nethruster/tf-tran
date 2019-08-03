@@ -45,6 +45,8 @@ function sortRouteStopArrivals(route) {
 }
 
 function getSortedStops(stopList, stops) {
+  if (stopList === undefined) {return stops}
+  
   let sortedStops = {}
   Object.keys(stops).sort((stopA, stopB) => {
     let posA = stopList[stopA]
