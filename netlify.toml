@@ -7,11 +7,18 @@
    from = "/api/tranvia"
    to = "http://tranviaonline.metrotenerife.com:8180/api/infoStops/infoPanel"
    status = 200
+  #Redirects secondary domains to the main domain
   [[redirects]]
    from = "https://tf-tran.netlify.com/*"
-   to = "https://tranvia.ml/:splat"
+   to = "https://tranvia.info/:splat"
    force = true
    status = 301
+   [[redirects]]
+   from = "https://tranvia.ml/*"
+   to = "https://tranvia.info/:splat"
+   force = true
+   status = 301
+   
   [[redirects]]
    from = "/*"
    to = "/index.html"
