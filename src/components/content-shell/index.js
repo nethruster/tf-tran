@@ -46,9 +46,12 @@ export default connect(
       });
 
       document.documentElement.addEventListener("mousewheel", event => {
-        if (event.srcElement.getAttribute("id") == "mount-point") {
-          this.scrollContainer.scrollTop =
-            this.scrollContainer.scrollTop + event.deltaY;
+        /* 
+         * Only react if the scroll event originates
+         * directly outide our content box (the scroll container)
+         */ 
+        if (event.srcElement.getAttribute("id") === "mount-point") {
+          this.scrollContainer.scrollTop += event.deltaY;
         }
       });
     }
