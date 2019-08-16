@@ -44,6 +44,13 @@ export default connect(
           this.setState({ isFetching: false });
         });
       });
+
+      document.documentElement.addEventListener("mousewheel", event => {
+        if (event.srcElement.getAttribute("id") == "mount-point") {
+          this.scrollContainer.scrollTop =
+            this.scrollContainer.scrollTop + event.deltaY;
+        }
+      });
     }
 
     componentDidMount() {
