@@ -130,7 +130,8 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from: APP_DIR + '/assets/favicons', to: BUILD_DIR + '/assets/favicons'},
-      { from: APP_DIR + '/assets/robots.txt', to: BUILD_DIR + '/robots.txt'}
+      { from: APP_DIR + '/assets/robots.txt', to: BUILD_DIR + '/robots.txt'},
+      { from: APP_DIR + '/assets/.well-known', to: BUILD_DIR + '/.well-known' }
     ]),
     new GenerateSW({
       runtimeCaching: [

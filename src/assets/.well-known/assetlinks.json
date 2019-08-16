@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "info.tranvia",
+      "sha256_cert_fingerprints": [
+        "7A:EE:8A:08:B3:14:82:19:FE:CE:37:5B:98:D5:16:EB:72:30:58:30:5D:38:E3:65:16:D8:F1:CD:19:E9:04:3F"
+      ]
+    }
+  }
+]
