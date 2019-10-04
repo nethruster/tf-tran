@@ -15,8 +15,8 @@ export default store => ({
       resolve();
     });
   },
-  setFetchEndedSuccessfully(state, status) {
-    store.setState({ fetchEndedSuccessfully: status });
+  setFetchResult(state, status) {
+    store.setState({ fetchEndedSuccessfully: status.sucessful, metroTenerifeIsOnline: status.metroTenerifeIsOnline });
   },
   setCurrentStop(state, stop) {
     store.setState({ selectedStop: stop });

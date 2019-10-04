@@ -87,12 +87,12 @@ export default connect(
         .updateRoutes()
         .then(() => {
           this.setState({ isFetching: false });
-          this.props.setFetchEndedSuccessfully(true)
+          this.props.setFetchResult({ sucessful: true, metroTenerifeIsOnline: true})
         })
         .catch(err => {
           console.error(err);
           this.setState({ isFetching: false });
-          this.props.setFetchEndedSuccessfully(false)
+          this.props.setFetchResult({ sucessful: false, metroTenerifeIsOnline: err !== "MetroTenerife failed" })
         });
     }
 

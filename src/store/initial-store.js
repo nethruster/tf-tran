@@ -3,6 +3,7 @@ const initialStore = {
   lastUpdated: Date.now(),
   isOnline: navigator.onLine,
   fetchEndedSuccessfully: true,
+  metroTenerifeIsOnline: true,
   selectedStop: "",
   search: {
     searchState: false,
