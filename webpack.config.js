@@ -9,6 +9,8 @@ const CompressionPlugin = require('compression-webpack-plugin')
 
 const isProduction = process.argv.indexOf('-p') !== -1 // Check if we are in production mode
 
+const apiURL = process.env.API_URL || "/api/tranvia"
+
 const cleanOptions = {
   root: path.resolve(__dirname),
   exclude: ['.gitkeep'],
@@ -113,6 +115,9 @@ module.exports = {
       test: /\.(html|js|css|json|svg|png|jpeg)$/,
       minRatio: 0.8
     }) : new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      "__API__": `"${apiURL}"`
+    }),
     new ExtractCssChunks({
       filename: '[name]-[hash:6].css',
       chunkFilename: '[name]-[hash:6].css',
@@ -136,7 +141,7 @@ module.exports = {
     new GenerateSW({
       runtimeCaching: [
         {
-          urlPattern: /\/api\/tranvia/,
+          urlPattern: new RegExp(apiURL.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
           handler: 'networkOnly'
         },
         {
