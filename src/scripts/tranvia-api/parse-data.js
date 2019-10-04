@@ -9,6 +9,9 @@ export default function parseData(data) {
   var routes = [];
 
   data.forEach(item => {
+    if (item.stopDescription === undefined) {
+      return
+    }
     if (routes[item.route - 1] === undefined) {
       routes[item.route - 1] = { name: `${item.route}`, stops: {} };
     }
