@@ -11,7 +11,7 @@ export default function NoServerConnection() {
         <Icon name="error" size="94" color="var(--color-bg)" />
       </div>
       <p class={`text-center ${style.description}`}>
-        No se pudo conectar con el servidor.
+        {this.props.metroTenerifeFault ? "No se pudo conectar con MetroTenerife" : "No se pudo conectar con el servidor."}
       </p>
       <p class={`text-center ${style.subdescription}`}>
         Por favor, intentalo de nuevo dentro de unos minutos.

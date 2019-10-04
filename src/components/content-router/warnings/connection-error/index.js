@@ -59,20 +59,26 @@ export default connect(
     }
 
     render() {
+      let message
+      if (this.props.notOnline) {
+        message = "Se ha perdido la conexión."
+      } else if (this.props.metroTenerifeOnline) {
+        message = "No se ha podido actualizar la información."
+      } else {
+        message = "No se ha podido contactar con MetroTenerife."
+      }
       return (
         <div class={style.warningWrapper}>
           <p>
             <small class="flex flex-full-center">
-              {this.props.global ? (
+              {this.props.notOnline ? (
                 <Icon name="wifi-off" color="#DD2C00" size="16" />
               ) : (
                 <Icon name="error" color="#DD2C00" size="16" />
               )}
               &nbsp;&nbsp;
               <span>
-                {this.props.global
-                  ? "Se ha perdido la conexión."
-                  : "No se ha podido actualizar la información."}
+                {message}
               </span>
               &nbsp;
               <span>Última actualización: {this.state.timePassedSince}</span>

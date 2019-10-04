@@ -13,13 +13,13 @@ import ConnectionError from "./warnings/connection-error";
 
 import { actions } from "store";
 
-function renderMainContent(search, isOnline, routes, fetchEndedSuccessfully) {
+function renderMainContent(search, isOnline, routes, fetchEndedSuccessfully, metroTenerifeIsOnline) {
    if (!isOnline && routes === null) {
     return <NoConnection />;
   }
 
   if(routes === null && !fetchEndedSuccessfully) {
-    return <NoServerConnection />;
+    return <NoServerConnection metroTenerifeFault={!metroTenerifeIsOnline}/>;
   }
 
   if(routes && routes.length === 0) {
@@ -39,15 +39,15 @@ function renderMainContent(search, isOnline, routes, fetchEndedSuccessfully) {
 }
 
 export default connect(
-  ["routes", "isOnline", "fetchEndedSuccessfully", "search"],
+  ["routes", "isOnline", "fetchEndedSuccessfully", "metroTenerifeIsOnline","search"],
   actions
-)(function ContentRouter({ routes, isOnline, fetchEndedSuccessfully, search, isScrollOutsideHeader }) {
+)(function ContentRouter({ routes, isOnline, fetchEndedSuccessfully, metroTenerifeIsOnline,search, isScrollOutsideHeader }) {
   return (
     <BrowserRouter>
       <div>
         <Header isScrollOutsideHeader={isScrollOutsideHeader} />
-        {routes !== null && !(isOnline && fetchEndedSuccessfully) && <ConnectionError global={!isOnline} />}
-        {renderMainContent(search, isOnline, routes, fetchEndedSuccessfully)}
+        {routes !== null && !(isOnline && fetchEndedSuccessfully) && <ConnectionError notOnline={!isOnline} metroTenerifeOnline={metroTenerifeIsOnline}/>}
+        {renderMainContent(search, isOnline, routes, fetchEndedSuccessfully, metroTenerifeIsOnline)}
       </div>
     </BrowserRouter>
   );
