@@ -1,4 +1,7 @@
 export function capitalize(string) {
+  if (string === undefined || string.toLowerCase === undefined) {
+    return ""
+  }
   return string
     .toLowerCase()
     .split(" ")
