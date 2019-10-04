@@ -1,6 +1,6 @@
 # example netlify.toml
 [build]
-  command = "yarn run build"
+  command = "API_URL='https://tf-tran-api.cl4.workers.dev/' yarn run build"
   publish = "dist"
 
   [[redirects]]
