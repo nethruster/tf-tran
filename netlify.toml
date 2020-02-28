@@ -1,10 +1,14 @@
 # example netlify.toml
 [build]
-  command = "API_URL='https://tf-tran-api.cl4.workers.dev/' yarn run build"
+  command = "API_URL='https://api.tranvia.info/' yarn run build"
   publish = "dist"
 
   [[redirects]]
    from = "/api/tranvia"
+   to = "http://tranviaonline.metrotenerife.com:8180/api/infoStops/infoPanel"
+   status = 200
+  [[redirects]]
+   from = "https://api.tranvia.info/"
    to = "http://tranviaonline.metrotenerife.com:8180/api/infoStops/infoPanel"
    status = 200
   #Redirects secondary domains to the main domain
