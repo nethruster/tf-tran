@@ -94,7 +94,7 @@ module.exports = {
     disableHostCheck: true,
     proxy: {
       "/api/tranvia": {
-        "target": 'http://tranviaonline.metrotenerife.com:8180/api/infoStops/infoPanel',
+        "target": 'https://tranviaonline.metrotenerife.com/api/infoStops/infoPanel',
          "pathRewrite": { '^/api/tranvia': '' },
         "changeOrigin": true,
         "secure": false
