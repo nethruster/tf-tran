@@ -16,7 +16,9 @@ export default function Footer({ isFetchingData }) {
         Este sitio no está de ningún modo afiliado, autorizado, mantenido o
         promocionado por&nbsp;
         <a target="_blank" rel="noopener" href="https://metrotenerife.com/">
-          MetroTenerife.
+          MetroTenerife
+        </a>. <a target="_blank" rel="noopener" href="/privacy-policy.html">
+          Política de Privacidad
         </a>
       </small>
     </p>
